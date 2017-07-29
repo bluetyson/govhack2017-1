@@ -18,4 +18,18 @@ router.get('/', function (req, res, next) {
     //res.send("hello data");
 });
 
+/* GET home page. */
+router.get('/hospital_aggregates', function (req, res, next) {
+    var sql = "SELECT * from vw_hospital_utilisation_aggregates;";
+    db.query(sql, function(err, result, fields){
+      console.log("query returned");
+      if (err){ return res.json(err);}
+
+      //console.log("result: " + result);
+      return res.json(result);
+      //return result[0]['response'];
+    });
+    //res.send("hello data");
+});
+
 module.exports = router;

@@ -6,6 +6,9 @@ const bodyParser = require('body-parser');  // needed to get post body
 
 const data = require('./data.js');
 
+app.use(cors());
+app.options('*', cors());
+
 app.use(bodyParser.urlencoded({ extended: false }));        // needed to get post body
 app.use(bodyParser.json());
 
