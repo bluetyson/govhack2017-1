@@ -47,20 +47,20 @@ router.get('/hospital_utilisation_predicted', function (req, res, next) {
       if (hospital != result[i]["hospital"]) {
         j++;
         hospital = result[i].avg_attendances;
-        let avg_attendances = result[i].avg_attendances;
-        let sd_attendances = result[i].sd_attendances;
-        let avg_admissions = result[i].avg_admissions;
-        let sd_admissions = result[i].sd_admissions;
-        let avg_triage_1 = result[i].avg_triage_1;
-        let sd_triage_1 = result[i].sd_triage_1;
-        let avg_triage_2 = result[i].avg_triage_2;
-        let sd_triage_2 = result[i].sd_triage_2;
-        let avg_triage_3 = result[i].avg_triage_3;
-        let sd_triage_3 = result[i].sd_triage_3;
-        let avg_triage_4 = result[i].avg_triage_4;
-        let sd_triage_4 = result[i].sd_triage_4;
-        let avg_triage_5 = result[i].avg_triage_5;
-        let sd_triage_5 = result[i].sd_triage_5;
+        var avg_attendances = result[i].avg_attendances;
+        var sd_attendances = result[i].sd_attendances;
+        var avg_admissions = result[i].avg_admissions;
+        var sd_admissions = result[i].sd_admissions;
+        var avg_triage_1 = result[i].avg_triage_1;
+        var sd_triage_1 = result[i].sd_triage_1;
+        var avg_triage_2 = result[i].avg_triage_2;
+        var sd_triage_2 = result[i].sd_triage_2;
+        var avg_triage_3 = result[i].avg_triage_3;
+        var sd_triage_3 = result[i].sd_triage_3;
+        var avg_triage_4 = result[i].avg_triage_4;
+        var sd_triage_4 = result[i].sd_triage_4;
+        var avg_triage_5 = result[i].avg_triage_5;
+        var sd_triage_5 = result[i].sd_triage_5;
 
         data.push({
           hospital: hospital,
