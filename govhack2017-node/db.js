@@ -13,7 +13,7 @@ var pool      =    mysql.createPool({
     user     : process.env.RDS_USERNAME,
     password : process.env.RDS_PASSWORD,
     port     : 3306,
-    database : 'oncallogist_test',
+    database : process.env.RDS_SCHEMA,
     debug    :  false,
     timezone : 'utc' 
 });
