@@ -46,7 +46,7 @@ router.get('/hospital_utilisation_predicted', function (req, res, next) {
 
       if (hospital != result[i]["hospital"]) {
         j++;
-        hospital = result[i].avg_attendances;
+        hospital = result[i].hospital;
         var avg_attendances = result[i].avg_attendances;
         var sd_attendances = result[i].sd_attendances;
         var avg_admissions = result[i].avg_admissions;
