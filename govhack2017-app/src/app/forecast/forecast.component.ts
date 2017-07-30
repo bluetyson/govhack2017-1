@@ -10,16 +10,16 @@ export class ForecastComponent implements OnInit {
 
 title = 'Govhack2017 - Emergency Department Load Forecast';
 
-  public hospital_utilisation_aggregates = [];
+  public hospital_utilisation_predictions = [];
 
   constructor(private dataService : DataService){
     
   }
 
   public ngOnInit(){
-    this.dataService.getHospitalAggregates()
+    this.dataService.getHospitalPrecitions()
     .subscribe(data => {
-      this.hospital_utilisation_aggregates = data;
+      this.hospital_utilisation_predictions = data;
     })
   }
 

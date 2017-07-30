@@ -1,0 +1,76 @@
+<div>
+  <h2 style="background-color:#555; color:white">{{hospital_utilisation.hospital}}</h2>
+
+  <div class="row" style="width:300px;margin-right:auto; margin-left:auto">
+    <h4>{{today | date:'EEEE, MMM d'}} (Today):</h4>
+  </div>
+  <div class="row" style="width:300px; margin-right:auto; margin-left:auto">
+    <div style="width:140px; ">
+      <img src="{{image(hospital_utilisation.predictions[0])}}" width="120" height="120" />
+    </div>
+    <div style="width:160px; margin-top:auto; margin-bottom:auto;">
+      <h1>{{descriptor(hospital_utilisation.predictions[0].score_above, hospital_utilisation.predictions[0].score_below)}}</h1>
+      <span>with a </span><strong>
+            {{hospital_utilisation.stats.avg_admissions / hospital_utilisation.stats.avg_attendances | percent: '1.0-0'}}  
+            </strong> <span>chance of inpatient admissions</span>
+    </div>
+  </div>
+
+  <div class="row" style="width:300px;margin-right:auto; margin-left:auto">
+    <div>
+      <strong>{{hospital_utilisation.predictions[0].probability_below | percent:'1.0-0'}}</strong> <span>chance of coffee break.</span>
+    </div>
+    <div>
+      <strong>{{hospital_utilisation.predictions[0].probability_above | percent:'1.0-0'}}</strong> <span>chance of chaos.</span>
+    </div>
+  </div>
+
+  <hr>
+
+  <div class="row" style="padding-top:0px; width:300px;margin-right:auto; margin-left:auto">
+    <h4>Tomorrow:</h4>
+  </div>
+  <div class="row" style="width:300px; margin-right:auto; margin-left:auto">
+    <div style="width:140px; ">
+      <img src="{{image(hospital_utilisation.predictions[1])}}" width="120" height="120" />
+    </div>
+    <div style="width:160px; margin-top:auto; margin-bottom:auto;">
+      <h1>{{descriptor(hospital_utilisation.predictions[1].score_above, hospital_utilisation.predictions[1].score_below)}}</h1>
+      <span>with a </span><strong>
+            {{hospital_utilisation.stats.avg_admissions / hospital_utilisation.stats.avg_attendances | percent: '1.0-0'}}    
+            </strong> <span>chance of inpatient admissions</span>
+    </div>
+  </div>
+
+  <div class="row" style="width:300px;margin-right:auto; margin-left:auto">
+    <div>
+      <strong>{{hospital_utilisation.predictions[1].probability_below | percent:'1.0-0'}}</strong> <span>chance of coffee break.</span>
+    </div>
+    <div>
+      <strong>{{hospital_utilisation.predictions[1].probability_above | percent:'1.0-0'}}</strong> <span>chance of chaos.</span>
+    </div>
+  </div>
+
+  <hr>
+  <div class="row" style="width:300px;margin-right:auto; margin-left:auto">
+    <h4>Average daily stats</h4>
+    <div>
+      <span>Avg. attendances:</span><strong> {{hospital_utilisation.stats.avg_attendances | number: '1.0-0'}}</strong> <span>(StdDev. {{hospital_utilisation.stats.sd_attendances | number: '1.0-0'}})</span>
+    </div>
+    <div>
+      <span>Avg. admissions:</span><strong> {{hospital_utilisation.stats.avg_admissions | number: '1.0-0'}}</strong> <span>(StdDev. {{hospital_utilisation.stats.sd_admissions | number: '1.0-0'}})</span>
+    </div>
+    <div style="padding-top:8px;">
+      <span>Average daily Triage numbers:</span>
+    </div>
+
+    <div>
+
+      <div style="display: block; width:300px; height:200px; opacity:0.7">
+        <canvas baseChart width="300" height="200" [data]="getTriageData(hospital_utilisation.stats)" [labels]="doughnutChartLabels"
+          [chartType]="doughnutChartType" [colors]="chartColors" [options]="doughnutChartOptions"></canvas>
+      </div>
+    </div>
+  </div>
+
+</div>

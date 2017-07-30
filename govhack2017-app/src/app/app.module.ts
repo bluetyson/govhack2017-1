@@ -12,6 +12,9 @@ import { DataService } from './data.service';
 import { HttpModule } from '@angular/http';
 import { ModelPerformanceComponent } from './model-performance/model-performance.component';
 import { AppLayoutComponent } from './app-layout/app-layout.component';
+import { ChartsModule } from 'ng2-charts/ng2-charts';
+import { ForecastCarouselItemComponent } from './forecast-carousel/forecast-carousel-item/forecast-carousel-item.component';
+import { DefinitionsComponent } from './definitions/definitions.component';
 
 
 
@@ -44,13 +47,16 @@ const appRoutes: Routes = [
     ForecastCarouselComponent,
     ModelPerformanceComponent,
     ForecastComponent,
-    AppLayoutComponent
+    AppLayoutComponent,
+    ForecastCarouselItemComponent,
+    DefinitionsComponent
   ],
   imports: [
     BrowserModule,
     RouterModule.forRoot(appRoutes),
     HttpModule,
-    NgbModule.forRoot()
+    NgbModule.forRoot(),
+    ChartsModule
   ],
   providers: [
     DataService

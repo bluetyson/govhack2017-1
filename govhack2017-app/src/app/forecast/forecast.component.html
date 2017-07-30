@@ -9,13 +9,9 @@
       Emergency Department Load <strong>Forecast</strong>
     </h2>
 
-    <app-forecast-carousel>
+    <app-forecast-carousel [hospital_utilisation_predictions]="hospital_utilisation_predictions">
 
     </app-forecast-carousel>
   </div>
-
-  <pre>
-    {{hospital_utilisation_aggregates | json}}
-  </pre>
 
 </body>
