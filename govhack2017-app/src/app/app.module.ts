@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { Routes, RouterModule } from '@angular/router';
 
 import { AppComponent } from './app.component';
@@ -15,6 +15,7 @@ import { AppLayoutComponent } from './app-layout/app-layout.component';
 import { ChartsModule } from 'ng2-charts/ng2-charts';
 import { ForecastCarouselItemComponent } from './forecast-carousel/forecast-carousel-item/forecast-carousel-item.component';
 import { DefinitionsComponent } from './definitions/definitions.component';
+import { AboutComponent } from './about/about.component';
 
 
 
@@ -36,6 +37,14 @@ const appRoutes: Routes = [
         path: 'model-performance',
         component: ModelPerformanceComponent
       },
+      {
+        path: 'definitions',
+        component: DefinitionsComponent
+      },
+      {
+        path: 'about',
+        component: AboutComponent
+      },
     ]
   }
 ];
@@ -49,7 +58,8 @@ const appRoutes: Routes = [
     ForecastComponent,
     AppLayoutComponent,
     ForecastCarouselItemComponent,
-    DefinitionsComponent
+    DefinitionsComponent,
+    AboutComponent
   ],
   imports: [
     BrowserModule,

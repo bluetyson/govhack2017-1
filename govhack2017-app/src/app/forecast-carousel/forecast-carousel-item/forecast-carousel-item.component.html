@@ -18,9 +18,12 @@
 
   <div class="row" style="width:300px;margin-right:auto; margin-left:auto">
     <div>
-      <strong>{{hospital_utilisation.predictions[0].probability_below | percent:'1.0-0'}}</strong> <span>chance of coffee break.</span>
+      <img src="../../assets/coffee.png" width="30" height="30" alt="">
+      <strong>{{hospital_utilisation.predictions[0].probability_below | percent:'1.0-0'}}</strong> 
+      <span>chance of coffee break.</span>
     </div>
     <div>
+      <img src="../../assets/busy.png" width="24" height="24" alt="">
       <strong>{{hospital_utilisation.predictions[0].probability_above | percent:'1.0-0'}}</strong> <span>chance of chaos.</span>
     </div>
   </div>
@@ -44,9 +47,11 @@
 
   <div class="row" style="width:300px;margin-right:auto; margin-left:auto">
     <div>
+      <img src="../../assets/coffee.png" width="30" height="30" alt="">
       <strong>{{hospital_utilisation.predictions[1].probability_below | percent:'1.0-0'}}</strong> <span>chance of coffee break.</span>
     </div>
     <div>
+      <img src="../../assets/busy.png" width="24" height="24" alt="">
       <strong>{{hospital_utilisation.predictions[1].probability_above | percent:'1.0-0'}}</strong> <span>chance of chaos.</span>
     </div>
   </div>
